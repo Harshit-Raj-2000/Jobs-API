@@ -1,3 +1,8 @@
+#### Documentation
+
+[Jobs API Docs](https://jobs-node-api.herokuapp.com/api-docs/)
+
+
 #### Setup
 
 ```bash
