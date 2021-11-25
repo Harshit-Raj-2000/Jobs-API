@@ -7,6 +7,11 @@ const cors = require('cors')  //makes the resources from this server accessible 
 const xss = require('xss-clean') //santises the user input to prevent cross site scripting attacks
 const rateLimiter = require('express-rate-limit') // limits the num of requests a user can send
 
+// packages for documentation
+const swaggerUI = require('swagger-ui-express')
+const YAML = require('yamljs')
+const swaggerDocument = YAML.load('./swagger.yaml')
+
 const express = require('express');
 const app = express();
 
@@ -36,6 +41,14 @@ app.use(helmet())
 app.use(cors())
 app.use(xss())
 // extra packages
+
+app.get('/',(req, res)=>{
+  res.send('<h1>Jobs API</h1><a href="/api-docs">Documentation</a>')
+})
+
+// sets up swagger documentation, exported files from postman, edited on apimatic, exported 
+// as yaml, edited on swaggerjs editor, then stored the file as swagger.yaml
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument))
 
 // routes
 app.use('/api/v1/auth', authRouter )
