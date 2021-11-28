@@ -14,6 +14,8 @@ npm install && npm start
 
 [All Keys Generator](https://allkeysgenerator.com/)
 
+Encrytion key - 256 bit
+
 
 #### Database Connection
 
