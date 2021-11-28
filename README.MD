@@ -9,6 +9,12 @@
 npm install && npm start
 ```
 
+
+### To generate JWT Public Keys
+
+[All Keys Generator](https://allkeysgenerator.com/)
+
+
 #### Database Connection
 
 1. Import connect.js
